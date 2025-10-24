@@ -1,6 +1,4 @@
-# simple_recommender.py
 
-# Hardcoded movie dataset with simple tags
 movies = {
     "The Matrix": ["sci-fi", "action", "hacker"],
     "Inception": ["sci-fi", "dream", "thriller"],
@@ -10,10 +8,10 @@ movies = {
     "The Notebook": ["romance", "drama", "love"],
 }
 
-# Function to recommend similar movies based on tag match
+
 def recommend(favorite_movie):
     if favorite_movie not in movies:
-        return "❌ Sorry, movie not found."
+        return " Sorry, movie not found."
 
     fav_tags = set(movies[favorite_movie])
     recommendations = []
@@ -28,11 +26,11 @@ def recommend(favorite_movie):
     top_matches = [title for title, score in recommendations if score > 0]
 
     if top_matches:
-        return "✅ You might also like:\n" + "\n".join(top_matches)
+        return "You might also like:\n" + "\n".join(top_matches)
     else:
-        return "⚠️ No similar movies found."
+        return " No similar movies found."
 
-# Ask user for input
-fav_movie = input("🎬 Enter a movie you like: ")
+
+fav_movie = input(" Enter a movie you like: ")
 print(recommend(fav_movie))
 
